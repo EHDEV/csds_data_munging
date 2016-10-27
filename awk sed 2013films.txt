@@ -1,0 +1,8 @@
+awk sed 2013films.txt
+
+cat -20 2013films.txt | grep "\||" | sed 's/\||/;/g; s/^;//g;' | awk -F ';' 'BEGIN {printf "movie_title, movie_production_house, director, genre, publisher"}{print $1, $2, $3, $5, $6}'
+
+
+p == gsub('publisher=.*[\|]');
+
+g == gsub('\]  .+<\w')
